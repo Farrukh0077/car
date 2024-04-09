@@ -20,31 +20,31 @@
 //     }
 // }
 
-let user = {
-    name: "Amal",
-    surName: "truev",
-    age: 29,
-    wifes: ['Nargiza', 'Amina', 'Amalya', 'Shoxruxa'],
-    wisas: ['USA', 'Ukrain', 'Russia', 'Mexico'],
-    polniImya: function() {
-        return this.name + ' ' + this.surName
-    }
-}
+// let user = {
+//     name: "Amal",
+//     surName: "truev",
+//     age: 29,
+//     wifes: ['Nargiza', 'Amina', 'Amalya', 'Shoxruxa'],
+//     wisas: ['USA', 'Ukrain', 'Russia', 'Mexico'],
+//     polniImya: function() {
+//         return this.name + ' ' + this.surName
+//     }
+// }
 
-let passport = {
-    serries: "AC",
-    number: 213123123,
-    date: "2019-06-06",
-    exp: "2029-06-06",
-}
+// let passport = {
+//     serries: "AC",
+//     number: 213123123,
+//     date: "2019-06-06",
+//     exp: "2029-06-06",
+// }
 
-let types = {
-    string: [],
-    number: [],
-    object: [],
-    boolean: [],
-    function: []
-}
+// let types = {
+//     string: [],
+//     number: [],
+//     object: [],
+//     boolean: [],
+//     function: []
+// }
 
 // TZ
 // Соеденить два объекта в одно целое (новый объект)
@@ -90,24 +90,24 @@ let types = {
 // });
 
 // console.log(types);
-let connect = Object.assign({}, user, {passport})
+// let connect = Object.assign({}, user, {passport})
 
-let keys = Object.keys(connect)
-let values = Object.values(connect)
-let endConnect = [...keys, ...values]
-
-
+// let keys = Object.keys(connect)
+// let values = Object.values(connect)
+// let endConnect = [...keys, ...values]
 
 
-endConnect.filter((elem) => {
-    let ferfero = typeof(elem)
-    if (types[ferfero]) {
-        types[ferfero].push(elem)
-    }
-})
 
 
-console.log(types);
+// endConnect.filter((elem) => {
+//     let ferfero = typeof(elem)
+//     if (types[ferfero]) {
+//         types[ferfero].push(elem)
+//     }
+// })
+
+
+// console.log(types);
 
 
 
@@ -374,7 +374,42 @@ console.log(types);
 //     }
 // })
 // console.log(emails);
+let car = {
+  brand: "BMw",
+  model: "X7",
+  year: 2023,
+  color: "black",
+  start() {
+    console.log("Двигатель автомобиля запущен.");
+  },
+  stop() {
+    console.log("Двигатель автомобиля остановлен.");
+  }
+};
+
+let person = {
+  name: "Farrukh",
+  age: 30,
+  license: false,
+  drive(carObj) {
+    if (this.license) {
+      console.log(`Началась поездка на автомобиле ${carObj.brand} ${carObj.model}.`);
+    } else {
+      console.log("У водителя нет прав на вождение.");
+    }
+  },
+  park() {
+    console.log("Автомобиль успешно припаркован.");
+  }
+};
 
 
+console.log(`Автомобиль: Марка: ${car.brand}, Модель: ${car.model}, Год: ${car.year}, Цвет: ${car.color}`);
+console.log(`Водитель: Имя: ${person.name}, Возраст: ${person.age}, Права: ${person.license ? 'есть' : 'нет'}`);
+
+car.start();
+person.drive(car);
+car.stop();
+person.park();
 
 
